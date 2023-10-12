@@ -8,7 +8,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
@@ -33,5 +32,5 @@ jobs:
 
       - name: Build and push monolith Docker image
         run: |
-          docker build -t liveclass-monolith-website:${{ env.appVersion }} .
-          docker push liveclass-monolith-website:${{ env.appVersion }}
+          docker build -t dareyregistry/monolith:${{ env.appVersion }} .
+          docker push dareyregistry/monolith:${{ env.appVersion }}
